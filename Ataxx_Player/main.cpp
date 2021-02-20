@@ -4,8 +4,6 @@
 #include <stdlib.h>
 using namespace std;
 
-//Termination Function needs changing
-
 int main()
 {
     std::cout.setf(std::ios_base::unitbuf);
@@ -57,6 +55,7 @@ int main()
         else if(game_input[0]=='1' || game_input[0]=='2')
         {
             state.set_search_mode((int)(game_input[0]-'0'));
+            cout<<"Search Mode changed to "<<game_input[0]<<endl;
         }
         else if(game_input[0]=='r' && game_input[1]=='t')
         {
@@ -64,6 +63,7 @@ int main()
             cin>>time;
             state.set_fixed_height(MAX_DEPTH);
             state.set_game_time(time);
+            cout<<"Total Remaining game-time: "<<time<<endl;
         }
         else if(game_input[0]=='f' && game_input[1]=='t')
         {
@@ -71,6 +71,7 @@ int main()
             cin>>time;
             state.set_fixed_height(MAX_DEPTH);
             state.set_time_limit(time);
+            cout<<"Fixed time per move: "<<time<<endl;
         }
         else if(game_input[0]=='d')
         {
@@ -78,6 +79,7 @@ int main()
             cin>>depth;
             state.set_fixed_height(depth);
             state.set_time_limit(MAX_TIME);
+            cout<<"Fixed Depth: "<<depth<<endl;
         }
         else if(game_input[0] == 'g')
         {
@@ -86,7 +88,7 @@ int main()
         }
         else if(game_input[0] == 'u')
         {
-            state.undo_move();
+            state.undo_move(true);
             state.show_state();
         }
         else if(game_input[0] == 'q') break;
@@ -165,9 +167,33 @@ eeeeeeee
 eexeexee
 eeeeeeee
 beeeeeew
+ft 1
+1
+g
+2
+g
+1
+g
+2
+g
+1
+g
+2
+g
+
+i 8
+s
+weeeeeeb
+weeeeeeb
+eexeexee
+eeeeeeee
+eeeeeeee
+eexeexee
+eeeeeeee
+beeeeeew
 b
 2
-ft 1
+ft 2
 g
 */
 

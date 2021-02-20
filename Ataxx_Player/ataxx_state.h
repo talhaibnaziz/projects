@@ -66,8 +66,9 @@ class ataxx_state
         Returns back to the previous state
         VERY OPTIMIZED and cannot work with
         a greater boar size
+        @param realtime true if called by main
         */
-        void undo_move();
+        void undo_move(bool realtime);
 
         /**
         Modifies NegaMax to prune search
@@ -144,8 +145,17 @@ class ataxx_state
         iterative search algorithms
         @param time is the game time
         */
-        //The game time is not yet used
         void set_game_time(double time);
+
+        /**
+        Save the principal variation of the search
+        @param height of the tree
+        @param rowto new row position of piece
+        @param colto new column position of piece
+        @param rowfrom old row position of piece
+        @param colfrom old column position of piece
+        */
+        void save_pvar(int height, int rowto, int colto, int rowfrom, int colfrom);
 
         /**
         Print all the moves leading to this
@@ -200,12 +210,12 @@ class ataxx_state
         int nodes_evaluated;
 
         ///Alpha-Beta Search Result Parameters
-        int bestrowfrom, bestcolfrom;
-        int bestrowto, bestcolto;
         int max_height;
         int best_score;
-        long long valid_moves, betacuts;
-        double CBF;
+        char PVar[3][2];
+        char PVar1[2][2];
+        char PVar2[2];
+        double betacuts, CBF;
 
         ///Search Control Parameters
         double time_limit, game_time;

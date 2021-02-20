@@ -69,6 +69,8 @@ void ataxx_state::set_state()
         TTWstate[i] = 0ULL;
         TTBstate[i] = 0ULL;
         TTwhite[i] = true;
+        TTheight[i] = -1;
+        TTgc[i] = 0;
     }
     for(int i=0; i<n_board; i++)
     {
@@ -340,7 +342,7 @@ int ataxx_state::game_over()
     else    return MAX_SCORE;
 }
 
-void ataxx_state::undo_move()
+void ataxx_state::undo_move(bool realtime)
 {
     if(!stack_idx)
     {
@@ -351,6 +353,7 @@ void ataxx_state::undo_move()
     ///Implicit undo of turns as well
     white = !white;
     stack_idx--;
+    if(realtime)    gc--;
 
     ///Implementing undo from move history
     bool pass = false;
@@ -453,15 +456,15 @@ int ataxx_state::AlphaBeta(int height, int alpha, int beta)
     }
 
     ///Use Transposition Table
-    unsigned long long int idx = checkTT(height, alpha, beta);
+    unsigned long long int idx = -1ULL;
+    idx = checkTT(height, alpha, beta);
     if(idx!=-1ULL && alpha >= beta)
     {
         TTC++;
         return TTscore[idx];
     }
-
     ///Start of normal cases
-    int rowto, colto; valid_moves = 0;
+    int rowto, colto; double valid_moves = 0.0;
     int score = -MAX_SCORE; int al = alpha;
     bool pass = true;
     int local_colto=0, local_colfrom=0, local_rowto=0, local_rowfrom=0;
@@ -472,42 +475,34 @@ int ataxx_state::AlphaBeta(int height, int alpha, int beta)
         rowto = (int)((TTMove[idx][0]>>4) & 15);
         int j = (int)(TTMove[idx][1] & 15);
         colto = (int)((TTMove[idx][1]>>4) & 15);
-        if(board[rowto][colto]=='e')
+        pass = false; valid_moves++;
+        do_move(i, j, rowto, colto);
+        int x = -AlphaBeta(height-1, -beta, -al);
+        if(score < x)
         {
-            pass = false; valid_moves++;
-            do_move(i, j, rowto, colto);
-            int x = -AlphaBeta(height-1, -beta, -al);
-            if(score < x)
+            score = x;
+            local_rowto = rowto;
+            local_colto = colto;
+            local_rowfrom = i;
+            local_colfrom = j;
+            if(score > al)   al = score;
+            /**
+            Better move is taken but too much
+            means the subtree is useless
+            */
+            if(score >= beta)
             {
-                score = x;
-                local_rowto = rowto;
-                local_colto = colto;
-                local_rowfrom = i;
-                local_colfrom = j;
-                if(height == max_height)
-                {
-                    bestrowto = rowto;
-                    bestcolto = colto;
-                    bestrowfrom = i;
-                    bestcolfrom = j;
-                }
-                if(score > al)   al = score;
-                /**
-                Better move is taken but too much
-                means the subtree is useless
-                */
-                if(score >= beta)
-                {
-                    undo_move();
-                    CBF += (double)valid_moves;
-                    betacuts++;
-                    saveTT(score, local_rowto, local_rowfrom, local_colto, local_colfrom, height, alpha, beta);
+                undo_move(false);
+                CBF += valid_moves;
+                if(valid_moves>0)   betacuts++;
+                saveTT(score, local_rowto, local_rowfrom, local_colto, local_colfrom, height, alpha, beta);
 
-                    return score;
-                }
+                return score;
             }
-            undo_move();
+            ///For storing Principal Variation
+            if(height > (max_height-3)) save_pvar(height, rowto, colto, i, j);
         }
+        undo_move(false);
     }
     for(int i=0; i<n_board; i++)
     {
@@ -538,13 +533,6 @@ int ataxx_state::AlphaBeta(int height, int alpha, int beta)
                             local_colto = colto;
                             local_rowfrom = i;
                             local_colfrom = j;
-                            if(height == max_height)
-                            {
-                                bestrowto = rowto;
-                                bestcolto = colto;
-                                bestrowfrom = i;
-                                bestcolfrom = j;
-                            }
                             if(score > al)   al = score;
                             /**
                             Better move is taken but too much
@@ -552,15 +540,17 @@ int ataxx_state::AlphaBeta(int height, int alpha, int beta)
                             */
                             if(score >= beta)
                             {
-                                undo_move();
-                                CBF += (double)valid_moves;
-                                betacuts++;
+                                undo_move(false);
+                                CBF += valid_moves;
+                                if(valid_moves>0)   betacuts++;
                                 saveTT(score, local_rowto, local_rowfrom, local_colto, local_colfrom, height, alpha, beta);
 
                                 return score;
                             }
+                            ///For storing Principal Variation
+                            if(height > (max_height-3)) save_pvar(height, rowto, colto, i, j);
                         }
-                        undo_move();
+                        undo_move(false);
                     }
                 }
             }
@@ -570,7 +560,6 @@ int ataxx_state::AlphaBeta(int height, int alpha, int beta)
     if(pass)
     {
         do_move(0, 0, 0, 0);
-        valid_moves++;
         int x = -AlphaBeta(height-1, -beta, -al);
         if(score < x)
         {
@@ -579,13 +568,6 @@ int ataxx_state::AlphaBeta(int height, int alpha, int beta)
             local_colto = 0;
             local_rowfrom = 0;
             local_colfrom = 0;
-            if(height == max_height)
-            {
-                bestrowto = 0;
-                bestcolto = 0;
-                bestrowfrom = 0;
-                bestcolfrom = 0;
-            }
             if(score > al)   al = score;
             /**
             Better move is taken but too much
@@ -593,19 +575,55 @@ int ataxx_state::AlphaBeta(int height, int alpha, int beta)
             */
             if(score >= beta)
             {
-                undo_move();
-                betacuts++;
-                CBF += (double)valid_moves;
+                undo_move(false);
                 saveTT(score, 0, 0, 0, 0, height, alpha, beta);
 
                 return score;
             }
+            ///For storing Principal Variation
+            if(height > (max_height-3))   save_pvar(height, 0, 0, 0, 0);
         }
-        undo_move();
+        undo_move(false);
     }
     saveTT(score, local_rowto,local_rowfrom, local_colto, local_colfrom, height, alpha, beta);
 
     return score;
+}
+
+void ataxx_state::save_pvar(int height, int rowto, int colto, int rowfrom, int colfrom)
+{
+    if(height == max_height)
+    {
+        PVar[0][0] = (char)(rowfrom | (rowto << 4));
+        PVar[0][1] = (char)(colfrom | (colto << 4));
+        if(height > 2)
+        {
+            PVar[1][0] = PVar1[0][0];
+            PVar[1][1] = PVar1[0][1];
+            PVar[2][0] = PVar1[1][0];
+            PVar[2][1] = PVar1[1][1];
+        }
+        else if(height > 1)
+        {
+            PVar[1][0] = PVar1[0][0];
+            PVar[1][1] = PVar1[0][1];
+        }
+    }
+    else if(height == (max_height-1))
+    {
+        PVar1[0][0] = (char)(rowfrom | (rowto << 4));
+        PVar1[0][1] = (char)(colfrom | (colto << 4));
+        if(height > 1)
+        {
+            PVar1[1][0] = PVar2[0];
+            PVar1[1][1] = PVar2[1];
+        }
+    }
+    else if(height == (max_height-2))
+    {
+        PVar2[0] = (char)(rowfrom | (rowto << 4));
+        PVar2[1] = (char)(colfrom | (colto << 4));
+    }
 }
 
 void ataxx_state::Iterative_AlphaBeta()
@@ -624,25 +642,44 @@ void ataxx_state::Iterative_AlphaBeta()
     cout<<"Search Depth: "<<height_limit<<" Search Time Limit: "<<time_limit<<endl;
     if(game_time > -1) cout<<"Remaining Time: "<<game_time<<endl;
 
-    cout<<"CTM DDD\tTime"<<setw(12)<<"Calls"<<setw(12)<<"TTQ"<<setw(12)<<"TTF";
-    cout<<setw(12)<<"TTC"<<"\tCBF\t"<<"Value"<<endl;
+    cout<<"CTM DDD Time "<<setw(12)<<"Calls"<<setw(10)<<"Speed"<<setw(10)<<"TTQ";
+    cout<<setw(10)<<"TTF"<<setw(10)<<"TTC"<<setw(5)<<"CBF"<<" "<<setw(16)<<"[P-Variation]"<<" Val"<<endl;
     max_height = 1;
     timeout = false;
     int local_colto=0, local_colfrom=0, local_rowto=0, local_rowfrom=0;
-    TTQ = 0; TTF = 0; TTC = 0; betacuts = 0; CBF = 0;
+    TTQ = 0; TTF = 0; TTC = 0;
 
-    start = chrono::steady_clock::now();
-    while(max_height <= height_limit)
+    bool pass = true;
+    for(int i=0; i<n_board; i++)
     {
-        nodes_evaluated = 0; betacuts = 0;
+        for(int j=0; j<n_board; j++)
+        {
+            if(board[i][j] == 'x' || board[i][j] == 'e')    continue;
+            for(int ii=0; ii<24; ii++)
+            {
+                int rowto = i+row_d2[ii];
+                int colto = j+col_d2[ii];
+                if(rowto<0 || rowto>=n_board || colto<0 || colto>=n_board)
+                    continue;
+                if((white && board[i][j]=='w') && board[rowto][colto]=='e')
+                    pass = false;
+                else if((!white && board[i][j]=='b') && board[rowto][colto]=='e')
+                    pass = false;
+            }
+        }
+    }
+    start = chrono::steady_clock::now();
+    while(!pass && max_height <= height_limit)
+    {
+        nodes_evaluated = 0; betacuts = 0; CBF = 0;
 
         if(search_mode==1)  best_score = AlphaBeta(max_height, -MAX_SCORE, MAX_SCORE);
         else
         {
             if(white_cnt==0)
-                best_score = AlphaBeta(max_height, black_cnt, black_cnt+empty_cnt);
+                best_score = AlphaBeta(max_height, black_cnt, black_cnt+empty_cnt+1);
             else if(black_cnt==0)
-                best_score = AlphaBeta(max_height, white_cnt, white_cnt+empty_cnt);
+                best_score = AlphaBeta(max_height, white_cnt, white_cnt+empty_cnt+1);
             else
             {
                 int low_score = -(white_cnt+black_cnt+empty_cnt);
@@ -656,10 +693,43 @@ void ataxx_state::Iterative_AlphaBeta()
 
         if(white)   cout<<"WHT ";
         else    cout<<"BLK ";
-        cout<<setw(3)<<max_height<<"\t"<<fixed<<setprecision(2)<<elapsed_seconds.count();
+        cout<<setw(3)<<max_height<<" "<<setw(4)<<fixed<<setprecision(1)<<elapsed_seconds.count();
         cout<<" "<<setw(12)<<nodes_evaluated;
-        cout<<setw(12)<<TTQ<<setw(12)<<TTF<<setw(12)<<TTC<<"\t";
-        cout<<fixed<<setprecision(2)<<CBF/(double)betacuts<<"\t"<<best_score<<endl;
+        if(elapsed_seconds.count() > 0.0)
+            cout<<setw(10)<<(double)nodes_evaluated/elapsed_seconds.count();
+        else    cout<<setw(10)<<"---";
+        cout<<setw(10)<<TTQ<<setw(10)<<TTF<<setw(10)<<TTC;
+        if(betacuts>0)
+            cout<<" "<<setw(4)<<fixed<<setprecision(1)<<CBF/betacuts;
+        else    cout<<" ----";
+
+        ///Converting move storage->string
+        cout<<" ["<<(char)((PVar[0][1] & 15)+'a');
+        cout<<(char)('1'-((PVar[0][0] & 15)-(n_board-1)));
+        cout<<(char)(((PVar[0][1]>>4) & 15)+'a');
+        cout<<(char)('1'-(((PVar[0][0]>>4) & 15)-(n_board-1)));
+        if(max_height>2)
+        {
+            cout<<" "<<(char)((PVar[1][1] & 15)+'a');
+            cout<<(char)('1'-((PVar[1][0] & 15)-(n_board-1)));
+            cout<<(char)(((PVar[1][1]>>4) & 15)+'a');
+            cout<<(char)('1'-(((PVar[1][0]>>4) & 15)-(n_board-1)));
+
+            cout<<" "<<(char)((PVar[2][1] & 15)+'a');
+            cout<<(char)('1'-((PVar[2][0] & 15)-(n_board-1)));
+            cout<<(char)(((PVar[2][1]>>4) & 15)+'a');
+            cout<<(char)('1'-(((PVar[2][0]>>4) & 15)-(n_board-1)));
+        }
+        else if(max_height>1)
+        {
+            cout<<" "<<(char)((PVar[1][1] & 15)+'a');
+            cout<<(char)('1'-((PVar[1][0] & 15)-(n_board-1)));
+            cout<<(char)(((PVar[1][1]>>4) & 15)+'a');
+            cout<<(char)('1'-(((PVar[1][0]>>4) & 15)-(n_board-1)));
+            cout<<" ----";
+        }
+        else    cout<<" ---- ----";
+        cout<<"] "<<setw(3)<<best_score<<endl;
 
         if(timeout)
         {
@@ -669,10 +739,10 @@ void ataxx_state::Iterative_AlphaBeta()
         /**
         If there is a timeout, use best move of previous search
         */
-        local_colfrom = bestcolfrom;
-        local_colto = bestcolto;
-        local_rowfrom = bestrowfrom;
-        local_rowto = bestrowto;
+        local_colfrom = (int)(PVar[0][1] & 15);
+        local_colto = (int)((PVar[0][1]>>4) & 15);
+        local_rowfrom = (int)(PVar[0][0] & 15);
+        local_rowto = (int)((PVar[0][0]>>4) & 15);
         max_height++;
     }
 
@@ -724,7 +794,7 @@ unsigned long long int ataxx_state::checkTT(int height, int &alpha, int &beta)
     unsigned long long int idx;
     if(search_mode==2)  idx = hashValue % (unsigned long long)MAX_TT_SIZE;
     else    idx = hashValue % (unsigned long long)(256000);
-    if(TTwhite[idx]==white && TTWstate[idx]==Wstate && TTBstate[idx]==Bstate)
+    if(TTwhite[idx]==white && TTWstate[idx]==Wstate && TTBstate[idx]==Bstate && TTgc[idx]==gc)
     {
         TTF++;
         ///Trusted value, modify search window
@@ -733,12 +803,12 @@ unsigned long long int ataxx_state::checkTT(int height, int &alpha, int &beta)
             if(TTfvalue[idx] == EXACT)
             {
                 ///Changed the limits here to bring consistency
-                alpha = TTscore[idx]-1;
+                alpha = TTscore[idx];
                 beta = TTscore[idx]+1;
             }
             else if(TTfvalue[idx] == LOWERBOUND)
                 alpha = max(alpha, TTscore[idx]);
-            else
+            else if(TTfvalue[idx] == UPPERBOUND)
                 beta = min(beta, TTscore[idx]);
         }
         ///Only use best move for better heuristics
@@ -757,7 +827,9 @@ void ataxx_state::print_stack()
         int colto = (int)((move_stack[i][1]>>4) & 15);
         char move_string[6];
         int idx = 0;
-        move_string[idx++] = 'm';
+        ///If Black starts playing
+        if(i%2)   move_string[idx++] = 'w';
+        else    move_string[idx++] = 'b';
 
         move_string[idx++] = (char)(colfrom+'a');
         move_string[idx++] = (char)('1'-(rowfrom-(n_board-1)));
