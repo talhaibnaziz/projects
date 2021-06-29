@@ -1,0 +1,14 @@
+Graph - Codeforces 616C - Medium, have to know dfs/bfs
+Probability - UVA 12457
+Geo - SPOJ DOORSPEN - Doors and Penguins - Medium, simple use of Convex Hull
+Stopper - 
+
+
+Greedy - Codeforces 870B - Medium Easy
+BasicMath - Codeforces 979A - Very Easy if understood
+DS - SPOJ CMG - Collecting Mango - Medium Easy, have to use scanf printf
+NumberTheory - Codeforces 1295D
+Adhoc - Codeforces 801A - Easy
+Implementation - Codeforces 285B - Easy
+String - UVA 10100 - Medium, needs DP
+

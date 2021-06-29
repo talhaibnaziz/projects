@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_unsafe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.cse.mist.shurokkkha.Unsafe"
+    android:background="@drawable/front">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="50dp"
+        android:text="   সুরক্ষা"
+        android:textColor="#FF2D8BB9"
+        android:width="200dp"
+        android:height="70dp"
+        android:id="@+id/heading"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="200dp"
+        android:height="50dp"
+        android:id="@+id/FollowedButton"
+        android:text="Being Followed"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:onClick="clickFollowed"
+
+        android:layout_marginTop="39dp"
+        android:layout_below="@+id/heading"
+        android:layout_alignStart="@+id/AssaultButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="200dp"
+        android:height="50dp"
+        android:id="@+id/AssaultButton"
+        android:text="Sexual Assault"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:onClick="clickAssault"
+
+        android:layout_marginTop="41dp"
+        android:layout_below="@+id/FollowedButton"
+        android:layout_alignStart="@+id/ViolenceButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="200dp"
+        android:height="50dp"
+        android:id="@+id/ViolenceButton"
+        android:text="Domestic Violence"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:onClick="clickViolence"
+
+        android:layout_marginTop="57dp"
+
+
+        android:layout_below="@+id/AssaultButton"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:width="20dp"
+        android:shadowRadius="5"
+        android:text="@string/log_out"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="14dp"
+        android:layout_alignStart="@+id/ViolenceButton"
+        android:layout_alignEnd="@+id/ViolenceButton" />
+
+</RelativeLayout>

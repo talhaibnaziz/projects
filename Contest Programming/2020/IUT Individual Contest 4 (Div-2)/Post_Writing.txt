@@ -1,0 +1,10 @@
+Assalamu Alaikum everyone,
+
+Highlights of the IUT Individual Contest 4 (Div-2)
+1. The contest had a total of 10 problems and 82 participants.
+2. Highest number of problems solved (7) by jointly "pranonraian" (Pranon Rahman) and "Zenhance" (Zadid).
+3. The most tempting and the most solved problem was Problem "G - Airport Configuration" with 139 attempts and 62 solves.
+4. The problem solved earliest was Problem "C - Data Center Drama" and it was solved by Starscream_11813 (Rifat) at 14 min 04 seconds after the start of the contest.
+5. There were no unsolved problems, as there were many div-1 participants as well.
+
+So again, congratulations to "pranonraian" (Pranon Rahman) and "Zenhance" (Zadid).

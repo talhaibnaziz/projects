@@ -1,0 +1,4 @@
+sceneSetups:
+- path: E:/Work/Hard Earned Projects/Unity/Survival Shooter/Assets/_Complete-Game/_Complete-Game.unity
+  isLoaded: 1
+  isActive: 1

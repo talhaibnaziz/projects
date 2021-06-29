@@ -1,0 +1,28 @@
+void dfs(int node, int par)
+{
+    timer++;
+    low[node] = timer;
+    disc[node] = timer;
+    int child = 0;
+    for(int i=0; i<nodes[node].size(); i++)
+    {
+        int next = nodes[node][i];
+        if(low[next]==0)
+        {
+            child++;
+            dfs(next, node);
+            low[node] = min(low[node], low[next]);
+            if(low[next]>=disc[node])   arti[node] = 1; // in case of bridge low[next]>disc[node]
+        }
+        else if(par!=next)
+        {
+            if(disc[next]<disc[node])
+            {
+                low[node] = min(low[node], disc[next]);
+                if(low[next]>=disc[node])   arti[node] = 1; // in case of bridge low[next]>disc[node]
+            }
+        }
+    }
+    //cout<<node<<' '<<disc[node]<<' '<<low[node]<<endl;
+    if(node == par && child < 2)  arti[node] = 0;
+}

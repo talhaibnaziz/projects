@@ -1,0 +1,331 @@
+
+<!-- saved from url=(0089)http://www.lightoj.com/volume_problemcategory.php?user_id=21963&category=Ternary%20Search -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Jan's LightOJ :: Categorized Problems :: Advanced Search Techniques :: Ternary Search</title>
+		
+		<link rel="stylesheet" type="text/css" href="./Jan&#39;s LightOJ __ Categorized Problems __ Advanced Search Techniques __ Ternary Search_files/style.css">
+		<script language="javascript" type="text/javascript" src="./Jan&#39;s LightOJ __ Categorized Problems __ Advanced Search Techniques __ Ternary Search_files/lightproblemsort.js"></script>
+	</head>
+
+	<body>
+<style>
+div.tempMessage {
+  float: left;
+  font-size: 30;
+  margin-top: 10px;
+  margin-left: 300px;
+  position: absolute;
+  border: 2px solid white;
+  background: yellow;
+  border-radius: 5px;
+  padding: 2px;
+}
+div.tempMessage a {
+  text-decoration: underline;
+  color: red;
+}
+</style>
+<div class="topDiv">
+			<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Advanced Search Techniques __ Ternary Search_files/main.png" class="topImage" style="float: left;">
+                <!--<div class="tempMessage"><a href="http://lightoj.com/lightojv2/contest/215/problems" target=_blank>ACM ICPC Dhaka Regionals Online Preliminary Contest is scheduled here.</a></div>!-->
+			<div class="topMenuMessage" style="display: block; float: right; padding: 50 5 0 0;">
+				Server Time:
+				<a class="top_link" target="_blank" href="http://www.timeanddate.com/worldclock/fixedtime.html?iso=20160827T094824">
+					Sat Aug 27, 2016 3:48 pm				</a>
+			</div>
+		</div>
+		<div class="topMenu" align="center">
+			<table width="100%">
+				<tbody><tr>
+					<td width="10%">
+						<div class="topMenuMessage">
+							&nbsp;<a class="top_link" href="http://www.lightoj.com/index.php">
+								Home
+							</a>
+						</div>
+					</td>
+					<td width="10%">
+						<div class="topMenuMessage">
+							<a class="top_link" href="http://www.lightoj.com/volume_problemset.php">
+								Volume
+							</a>
+						</div>
+					</td>
+					<td width="10%">
+						<div class="topMenuMessage">
+							<a class="top_link" href="http://www.lightoj.com/contest_index.php">
+								Contest
+							</a>
+						</div>
+					</td>
+					<td width="10%">
+						<div class="topMenuMessage">
+							<a class="top_link" href="http://www.lightoj.com/article_showcategory.php">Training</a>
+						</div>
+					</td>
+					<td width="10%">
+						<div class="topMenuMessage">
+							<a class="top_link" href="http://www.lightoj.com/forum_index.php">Community</a>
+						</div>
+					</td>
+					<td width="10%">
+						<div class="topMenuMessage">
+							<a class="top_link" href="http://www.lightoj.com/credits_index.php">Credits</a>
+						</div>
+					</td>
+					<td width="60%" align="right">
+						<div class="topMenuMessage">
+							Welcome
+								<a class="top_link" href="http://www.lightoj.com/index_edituser.php">
+									Talha Ibn Aziz								</a>
+							(<a class="top_link" href="http://www.lightoj.com/login_logout.php">
+								logout
+							</a>)&nbsp;
+						</div>
+					</td>
+				</tr>
+			</tbody></table>
+		</div>
+		<div id="wrapper">
+			<div id="content" align="center">
+				<h1>
+					<a class="user_link" href="http://www.lightoj.com/volume_problemcategory.php?user_id=21963&amp;main_category=Advanced%20Search%20Techniques">
+						Advanced Search Techniques for Talha Ibn Aziz					</a>
+				</h1>
+				<h3>
+					<a id="reportName" class="user_link" style="color: #c75f3e;" href="javascript: toggleShow(&#39;mytable3&#39;)">(show unsolved)</a>
+				</h3>
+				<br>
+				<h2>
+					<a class="user_link" href="http://www.lightoj.com/volume_problemcategory.php?user_id=21963&amp;category=Ternary%20Search">
+						Ternary Search					</a>
+				</h2>
+
+				<table id="mytable3" cellspacing="0">
+					<tbody><tr>
+						<th class="leftTop" width="70">Submit</th>
+						<th class="top" width="70">Problem Status</th>
+						<th class="top" width="90">
+							<a class="user_link" href="javascript: sortTable(&#39;mytable3&#39;, &#39;problemId&#39;)">
+								Problem Id<br>
+								<img id="sortImageId" style="vertical-align: bottom;" src="./Jan&#39;s LightOJ __ Categorized Problems __ Advanced Search Techniques __ Ternary Search_files/sort_asc.png" title="Sort Descending">
+							</a>
+						</th>
+						<th class="top" style="text-align: left;">
+							<a class="user_link" href="javascript: sortTable(&#39;mytable3&#39;, &#39;problemName&#39;)">
+								Problem Name<br>
+								<img id="sortImageName" style="vertical-align: bottom; padding: 0 0 0 40;" src="./Jan&#39;s LightOJ __ Categorized Problems __ Advanced Search Techniques __ Ternary Search_files/sort_both.png" title="Sort Ascending">
+							</a>
+						</th>
+						<th class="top" width="125">
+							<a class="user_link" href="javascript: sortTable(&#39;mytable3&#39;, &#39;solvedTried&#39;)">
+								User Solved/Tried<br>
+								<img id="sortSolvedTried" style="vertical-align: bottom;" src="./Jan&#39;s LightOJ __ Categorized Problems __ Advanced Search Techniques __ Ternary Search_files/sort_both.png" title="Sort Ascending">
+							</a>
+						</th>
+						<th class="rightTop" width="125">
+							<a class="user_link" href="javascript: sortTable(&#39;mytable3&#39;, &#39;acTotal&#39;)">
+								Submission Accepted/Total<br>
+								<img id="sortAcTotal" style="vertical-align: bottom;" src="./Jan&#39;s LightOJ __ Categorized Problems __ Advanced Search Techniques __ Ternary Search_files/sort_both.png" title="Sort Ascending">
+							</a>
+						</th>
+					</tr>
+					<tr class="newone">
+						<th class="newone" title="special judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1146">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Advanced Search Techniques __ Ternary Search_files/submit3.png">
+							</a>
+						</th>
+						<td class="newone" title="special judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Advanced Search Techniques __ Ternary Search_files/special.png">
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/forum_showproblem.php?problem=1146" title="Goto Forum for 1146">
+								1146							</a>
+						</td>
+						<td class="newoneLeft">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_showproblem.php?problem=1146">Closest Distance</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1146">
+								<span class="percentcont">
+									<div class="perfill" style="width: 94.89%;"></div>
+									<div class="pertext">
+										297 / 313									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1146">
+							<span class="percentcont">
+									<div class="perfill" style="width: 55.5%;"></div>
+									<div class="pertext">
+										560 / 1009									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newtwo">
+						<th class="newtwo" title="special judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1240">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Advanced Search Techniques __ Ternary Search_files/submit3.png">
+							</a>
+						</th>
+						<td class="newtwo" title="special judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Advanced Search Techniques __ Ternary Search_files/special.png">
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/forum_showproblem.php?problem=1240" title="Goto Forum for 1240">
+								1240							</a>
+						</td>
+						<td class="newtwoLeft">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_showproblem.php?problem=1240">Point Segment Distance (3D)</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1240">
+								<span class="percentcont">
+									<div class="perfill" style="width: 94.96%;"></div>
+									<div class="pertext">
+										226 / 238									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1240">
+							<span class="percentcont">
+									<div class="perfill" style="width: 44.99%;"></div>
+									<div class="pertext">
+										467 / 1038									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+				</tbody></table>
+				<br>
+
+			</div>
+		</div>
+<div id="navigation">
+	<div class="navcontainer">
+		<ul class="navlist">
+			<li class="menutitle">Volume</li>
+
+			<li>
+				<a href="http://www.lightoj.com/volume_index.php">
+					Volume Home
+				</a>
+			</li>
+			<li>
+				<a href="http://www.lightoj.com/volume_problemset.php">
+					Problem Set
+				</a>
+			</li>
+
+
+
+			<li id="active">
+				<a id="current" href="http://www.lightoj.com/volume_problemcategory.php">
+					Problem Category
+				</a>
+			</li>
+			<li>
+				<a href="http://www.lightoj.com/volume_problemsetters.php">
+					Problem Setters
+				</a>
+			</li>
+			<li>
+				<a href="http://www.lightoj.com/volume_submit.php">
+					Submit Problem
+				</a>
+			</li>
+			<li>
+				<a href="http://www.lightoj.com/volume_usersubmissions.php">
+					My Submissions
+				</a>
+			</li>
+			<li>
+				<a href="http://www.lightoj.com/volume_submissions.php">
+					Judge Status
+				</a>
+			</li>
+			<li>
+				<a href="javascript:handleSubMenu()">
+					Ranklist
+				</a>
+			</li>
+
+			<span id="subactive" style="display: none;">
+				<li>
+					<a class="submenu" href="http://www.lightoj.com/volume_ranklist.php">
+						Full Ranklist
+					</a>
+				</li>
+
+				<li>
+					<a class="submenu" href="http://www.lightoj.com/volume_country_ranklist.php">
+						Country Ranklist
+					</a>
+				</li>
+				<!--
+				<li >
+					<a class="submenu" href="asd">
+						University Ranklist
+					</a>
+				</li>
+				!-->
+				<li>
+					<a class="submenu" href="http://www.lightoj.com/volume_ranklist.php?type=friend">
+						Friends Ranklist
+					</a>
+				</li>
+			</span>
+
+			<li>
+				<a href="http://www.lightoj.com/volume_userstat.php">
+					User Statistics
+				</a>
+			</li>
+			<li>
+				<a href="http://www.lightoj.com/volume_compare_userstat.php">
+					Compare User Statistics
+				</a>
+			</li>
+			<li class="menubottom">&nbsp;</li>
+		</ul>
+	</div>
+</div>
+
+<script>
+	function handleSubMenu( ) {
+		if( document.getElementById("subactive").style.display == "none" ) {
+			document.getElementById("subactive").style.display = "inline";
+		}
+		else {
+			document.getElementById("subactive").style.display = "none";
+		}
+	}
+</script>
+<div class="bottomDiv" align="center">
+	<table width="100%">
+		<tbody><tr>
+			<td width="50%">
+				<div class="midMessage">
+					Developed and Maintained by
+					<br><b>JANE ALAM JAN</b>
+				</div>
+
+			</td>
+			<td width="50%">
+				<div class="midMessage">
+					Copyright © 2012
+					<br><b>LightOJ, Jane Alam Jan</b>
+				</div>
+
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+	
+	
+
+</body></html>

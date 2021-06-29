@@ -1,0 +1,107 @@
+#include<bits/stdc++.h>
+using namespace std;
+int ara[50005],n;
+int tree[5000005][2];
+int idx=1;
+int Lim=32;
+void push(string s)
+{
+    int row=1,col;
+    for(int i=0;i<s.size();i++){
+        col=s[i]-'0';
+        if(tree[row][col]==0) tree[row][col]=++idx;
+        row=tree[row][col];
+    }
+}
+int findmin(string s)
+{
+    int row=1,col=1;
+    string s1;
+    for(int i=0;i<s.size();i++){
+        col=s[i]-'0';
+        int col1=col^1;
+        if(tree[row][col]!=0){
+            s1+=s[i];
+            row=tree[row][col];
+        }
+        else if(tree[row][col1]!=0){
+            s1+=(1^(s[i]-'0'))+'0';
+            row=tree[row][col1];
+        }
+        else break;
+    }
+    int num=0;
+    for(int i=0;i<s1.size();i++){
+        num*=2;
+        num+=s1[i]-'0';
+ 
+    }
+    return num;
+}
+int findmax(string s){
+    int row=1,col=1;
+    string s1;
+    for(int i=0;i<s.size();i++){
+        col=s[i]-'0';
+        int col1=col^1;
+        swap(col,col1);
+        if(tree[row][col]!=0){
+            s1+=(1^(s[i]-'0'))+'0';
+            row=tree[row][col];
+        }
+        else if(tree[row][col1]!=0){
+            s1+=s[i];
+            row=tree[row][col1];
+        }
+        else break;
+    }
+    int num=0;
+    for(int i=0;i<s1.size();i++){
+        num*=2;
+        num+=s1[i]-'0';
+ 
+    }
+    return num;
+}
+void solve(int v)
+{
+    int mn=INT_MAX;
+    int mx=-1;
+    int cxs=0;
+    string ss;
+    for(int i=0;i<=Lim;i++) ss+='0';
+    push(ss);
+    for(int i=0;i<n;i++){
+        cxs^=ara[i];
+        string s;
+        int a=cxs;
+        while(a>0){
+            if(a%2==0) s+='0';
+            else s+='1';
+            a/=2;
+        }
+        for(int i=s.size();i<=Lim;i++) s+='0';
+        reverse(s.begin(),s.end());
+        int c=findmax(s);
+        int b=findmin(s);
+        push(s);
+        mx=max(mx,c^cxs);
+        mn=min(mn,b^cxs);
+ 
+    }
+    printf("Case %d: %d %d\n",v,mx,mn);
+}
+int main()
+{
+    int T;
+    scanf("%d",&T);
+    for(int tc=1;tc<=T;tc++){
+        scanf("%d",&n);
+        memset(tree,0,sizeof tree);
+        for(int i=0;i<n;i++){
+            scanf("%d",&ara[i]);
+        }
+        solve(tc);
+    }
+ 
+}

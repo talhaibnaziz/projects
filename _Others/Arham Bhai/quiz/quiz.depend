@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1482570406 source:e:\codes\help\arham bhai\quiz\main.cpp
+	<iostream>
+	<fstream>
+	"player.h"
+	"questionmc.h"
+	"questionsa.h"
+	"questiontf.h"
+
+1482565502 e:\codes\help\arham bhai\quiz\include\player.h
+	<string>
+
+1482565882 source:e:\codes\help\arham bhai\quiz\src\player.cpp
+	"player.h"
+
+1482569740 source:e:\codes\help\arham bhai\quiz\src\question.cpp
+	"question.h"
+
+1482569740 e:\codes\help\arham bhai\quiz\include\question.h
+	<string>
+
+1482569740 source:e:\codes\help\arham bhai\quiz\src\questionmc.cpp
+	"questionmc.h"
+
+1482569813 e:\codes\help\arham bhai\quiz\include\questionmc.h
+	<question.h>
+
+1482569740 source:e:\codes\help\arham bhai\quiz\src\questionsa.cpp
+	"questionsa.h"
+
+1482569740 e:\codes\help\arham bhai\quiz\include\questionsa.h
+	<question.h>
+
+1482569740 source:e:\codes\help\arham bhai\quiz\src\questiontf.cpp
+	"questiontf.h"
+
+1482569740 e:\codes\help\arham bhai\quiz\include\questiontf.h
+	<question.h>
+

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_next_of_map"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.cse.mist.shurokkkha.DomesticViolence"
+    android:background="@drawable/front">
+
+
+    <Button
+        android:text="Log Out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/LogOut3Button"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="50dp"
+        android:text="   সুরক্ষা"
+        android:textColor="#FF2D8BB9"
+        android:width="200dp"
+        android:height="70dp"
+        android:id="@+id/heading"
+        />
+
+    <Button
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="200dp"
+        android:height="50dp"
+        android:layout_marginTop="80dp"
+        android:id="@+id/PoliceSButton"
+        android:text="Police Station"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:onClick="ClickPolice"
+        android:layout_below="@+id/heading"
+        android:layout_alignStart="@+id/heading" />
+
+    <Button
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="200dp"
+        android:height="50dp"
+        android:layout_marginTop="48dp"
+        android:id="@+id/SafehouseButton"
+        android:text="Notify"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:onClick="ClickNotify"
+        android:layout_below="@+id/PoliceSButton"
+        android:layout_alignStart="@+id/PoliceSButton" />
+
+
+</RelativeLayout>

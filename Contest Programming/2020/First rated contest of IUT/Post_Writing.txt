@@ -1,0 +1,15 @@
+Assalamu Alaikum everyone,
+Yesterday (16/03/2020) at 7 pm, a four hour long contest held in Virtual judge, which is the first
+contest in IUT with automated rating system. The rated contest had 13 problems and about 56 participants.
+Here are some highlights of the contest:
+1. The highest number of problems (10) were solved jointly by "zedrex" (Adib Abrar Kabeer) and "pranonraian" (Raian Rahman) - omanush er dol
+2. The most solved problem was problem number "A - Even Numbers" (55 solves) and the highest number of attempts was for problem "D - Intersections" (166 attempts)
+3. The problems "G - DSU", "K - Easier Math" (Not so easy afterall), and "L - FFW (Fast Floyd Warshall)", were unsolved.
+4. The problem solved earliest was problem "A" again solved just after 1 min 31 seconds by "sivan_iut".
+
+The performance was amazing, I mean who solves problem "B - Gimme them candy, No Slash gimme my candy" in 9 and a half minutes!
+I mean even reading the title took me 1 min, let alone the big problem statement. This goes to show how much time our participants
+have been spending relentlessly the last few days to improve their coding skills. However, this only applies to a few participants,
+as the amount of participation was not satisfactory. Hopefully, we will have more participants in the next contest, because, trust me when I say this, you will need this.
+
+Again, congratulations to "zedrex" (Adib Abrar Kabeer) and "pranonraian" (Raian Rahman).

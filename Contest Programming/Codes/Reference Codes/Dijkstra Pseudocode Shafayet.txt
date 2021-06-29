@@ -1,0 +1,15 @@
+1  procedure dijkstra(G,source):
+2      Q=priority_queue(), distance[]=infinity
+3      Q.enqueue(source)
+4      distance[source]=0
+5      while Q is not empty
+6         u = nodes in Q with minimum distance[]
+7         remove u from the Q
+8         for all edges from u to v in G.adjacentEdges(v) do
+9             if distance[u] + cost[u][v] < distance[v] 
+10                       distance[u]=distance[v]+cost[u][v];
+11                       Q.enqueue(v)
+12          end if
+13        end for
+14   end while
+15.   Return distance;

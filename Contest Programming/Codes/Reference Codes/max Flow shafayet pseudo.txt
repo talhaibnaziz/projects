@@ -1,0 +1,13 @@
+Input: A graph G = (V,E) with flow capacity cap, source node s and sink node t.
+Output: Calculate maximum flow from s to t.
+Initialize:
+    1. total_flow=0
+    2. Residual Capacity Cf(u,v)=cap(u,v) for each edge(u,v) in the graph      
+Algorithm:
+    1. While there is a path from s to t such that Cf[u][v]>0 for all edges (u,v) in path:
+        1.1. min_res_cap = minimum residual capacity among all the edges (u,v) in the path.
+        1.2. For each edge (u,v) in the path:
+            Cf(u,v) = Cf(u,v) - min_res_cap
+            Cf(v,u) = Cf(v,u) + min_res_cap
+        1.3. total_flow = total_flow + min_res_cap
+    3. Return total_flow

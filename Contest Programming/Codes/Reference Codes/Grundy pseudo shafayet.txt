@@ -1,0 +1,10 @@
+def grundyNumber (current_state):
+    moves[] = possible positions to which I can move from current_state
+    set X;
+    for (all new_state in moves) 
+		X.insert(grundyNumber(new_state));
+      
+    int ret=0;
+    while (s.contains(ret)) ret++;
+    #ret is the smallest non-negative integer not in the set s; 
+    return ret;

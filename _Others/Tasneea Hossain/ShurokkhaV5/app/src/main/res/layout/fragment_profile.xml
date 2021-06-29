@@ -1,0 +1,21 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/front"
+
+    tools:context="com.cse.mist.shurokkhav5.ProfileFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:background="@drawable/icon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Welcome to Your Profile"
+        android:textSize="50dp"
+        android:layout_gravity="center"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
+        android:id="@+id/textView2" />
+
+</FrameLayout>

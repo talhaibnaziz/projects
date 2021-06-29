@@ -1,0 +1,13 @@
+Here's the spreadsheet containing the updated ratings for Div. 2 contestants.
+
+Link: https://docs.google.com/spreadsheets/d/1184IZXZ5iV_i4T5Cx3qUq_XMlQIadnkrrQ5mq55HLTQ/edit?usp=sharing
+
+The rating system followed here is similar to the one used in Codeforces (You can learn more about it here: https://codeforces.com/blog/entry/20762). The system was slightly modified to accommodate our needs. Each problem carried equal points. That means your rating depends on the number of problems solved and the time penalty, instead of the difficulty of the solved problems (which is the case in most of the national programming contests). Another modification was to penalize the students who didn't participate. Let's say there are 50 students who registered using the response form. Among these 50, 3 students A (Rating: 1500), B (Rating: 2000) and C (Rating: 2500) didn't participate in the contest. They were included in the standings for the contest in reverse order of their ratings. The standings would look like this:
+............................................................................
+................[Ranklist of the 47 students who participated]..............
+............................................................................
+48. C 
+49. B
+50. A
+
+P.S.: Initially the ratings change might feel a bit unstable. This can be attributed to the nature of the Elo rating system that Codeforces adopted for their own rating system. To add to that, we had a lot of participants who did not have any previous rating (which was set to 1500). The ratings will be stabilized after a few contests.

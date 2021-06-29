@@ -1,0 +1,1072 @@
+
+<!-- saved from url=(0103)http://www.lightoj.com/volume_problemcategory.php?user_id=21963&category=Segment%20Tree/Interval%20Tree -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Jan's LightOJ :: Categorized Problems :: Data Structures :: Segment Tree/Interval Tree</title>
+		
+		<link rel="stylesheet" type="text/css" href="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/style.css">
+		<script language="javascript" type="text/javascript" src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/lightproblemsort.js"></script>
+	</head>
+
+	<body>
+<style>
+div.tempMessage {
+  float: left;
+  font-size: 30;
+  margin-top: 10px;
+  margin-left: 300px;
+  position: absolute;
+  border: 2px solid white;
+  background: yellow;
+  border-radius: 5px;
+  padding: 2px;
+}
+div.tempMessage a {
+  text-decoration: underline;
+  color: red;
+}
+</style>
+<div class="topDiv">
+			<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/main.png" class="topImage" style="float: left;">
+                <!--<div class="tempMessage"><a href="http://lightoj.com/lightojv2/contest/215/problems" target=_blank>ACM ICPC Dhaka Regionals Online Preliminary Contest is scheduled here.</a></div>!-->
+			<div class="topMenuMessage" style="display: block; float: right; padding: 50 5 0 0;">
+				Server Time:
+				<a class="top_link" target="_blank" href="http://www.timeanddate.com/worldclock/fixedtime.html?iso=20160911T060206">
+					Sun Sep 11, 2016 12:02 pm				</a>
+			</div>
+		</div>
+		<div class="topMenu" align="center">
+			<table width="100%">
+				<tbody><tr>
+					<td width="10%">
+						<div class="topMenuMessage">
+							&nbsp;<a class="top_link" href="http://www.lightoj.com/index.php">
+								Home
+							</a>
+						</div>
+					</td>
+					<td width="10%">
+						<div class="topMenuMessage">
+							<a class="top_link" href="http://www.lightoj.com/volume_problemset.php">
+								Volume
+							</a>
+						</div>
+					</td>
+					<td width="10%">
+						<div class="topMenuMessage">
+							<a class="top_link" href="http://www.lightoj.com/contest_index.php">
+								Contest
+							</a>
+						</div>
+					</td>
+					<td width="10%">
+						<div class="topMenuMessage">
+							<a class="top_link" href="http://www.lightoj.com/article_showcategory.php">Training</a>
+						</div>
+					</td>
+					<td width="10%">
+						<div class="topMenuMessage">
+							<a class="top_link" href="http://www.lightoj.com/forum_index.php">Community</a>
+						</div>
+					</td>
+					<td width="10%">
+						<div class="topMenuMessage">
+							<a class="top_link" href="http://www.lightoj.com/credits_index.php">Credits</a>
+						</div>
+					</td>
+					<td width="60%" align="right">
+						<div class="topMenuMessage">
+							Welcome
+								<a class="top_link" href="http://www.lightoj.com/index_edituser.php">
+									Talha Ibn Aziz								</a>
+							(<a class="top_link" href="http://www.lightoj.com/login_logout.php">
+								logout
+							</a>)&nbsp;
+						</div>
+					</td>
+				</tr>
+			</tbody></table>
+		</div>
+		<div id="wrapper">
+			<div id="content" align="center">
+				<h1>
+					<a class="user_link" href="http://www.lightoj.com/volume_problemcategory.php?user_id=21963&amp;main_category=Data%20Structures">
+						Data Structures for Talha Ibn Aziz					</a>
+				</h1>
+				<h3>
+					<a id="reportName" class="user_link" style="color: #c75f3e;" href="javascript: toggleShow(&#39;mytable3&#39;)">(show unsolved)</a>
+				</h3>
+				<br>
+				<h2>
+					<a class="user_link" href="http://www.lightoj.com/volume_problemcategory.php?user_id=21963&amp;category=Segment%20Tree/Interval%20Tree">
+						Segment Tree/Interval Tree					</a>
+				</h2>
+
+				<table id="mytable3" cellspacing="0">
+					<tbody><tr>
+						<th class="leftTop" width="70">Submit</th>
+						<th class="top" width="70">Problem Status</th>
+						<th class="top" width="90">
+							<a class="user_link" href="javascript: sortTable(&#39;mytable3&#39;, &#39;problemId&#39;)">
+								Problem Id<br>
+								<img id="sortImageId" style="vertical-align: bottom;" src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/sort_asc.png" title="Sort Descending">
+							</a>
+						</th>
+						<th class="top" style="text-align: left;">
+							<a class="user_link" href="javascript: sortTable(&#39;mytable3&#39;, &#39;problemName&#39;)">
+								Problem Name<br>
+								<img id="sortImageName" style="vertical-align: bottom; padding: 0 0 0 40;" src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/sort_both.png" title="Sort Ascending">
+							</a>
+						</th>
+						<th class="top" width="125">
+							<a class="user_link" href="javascript: sortTable(&#39;mytable3&#39;, &#39;solvedTried&#39;)">
+								User Solved/Tried<br>
+								<img id="sortSolvedTried" style="vertical-align: bottom;" src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/sort_both.png" title="Sort Ascending">
+							</a>
+						</th>
+						<th class="rightTop" width="125">
+							<a class="user_link" href="javascript: sortTable(&#39;mytable3&#39;, &#39;acTotal&#39;)">
+								Submission Accepted/Total<br>
+								<img id="sortAcTotal" style="vertical-align: bottom;" src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/sort_both.png" title="Sort Ascending">
+							</a>
+						</th>
+					</tr>
+					<tr class="newone">
+						<th class="newone" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1080">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/submit1.png">
+							</a>
+						</th>
+						<td class="newone" title="normal judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/normal.png">
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/forum_showproblem.php?problem=1080" title="Goto Forum for 1080">
+								1080							</a>
+						</td>
+						<td class="newoneLeft">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_showproblem.php?problem=1080">Binary Simulation</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1080">
+								<span class="percentcont">
+									<div class="perfill" style="width: 90.97%;"></div>
+									<div class="pertext">
+										1008 / 1108									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1080">
+							<span class="percentcont">
+									<div class="perfill" style="width: 39.84%;"></div>
+									<div class="pertext">
+										1916 / 4809									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newtwo">
+						<th class="newtwo" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1082">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/solved1.png">
+							</a>
+						</th>
+						<td class="newtwo" title="lock problem 1082">
+							<a href="http://www.lightoj.com/volume_lockproblem.php?problem=1082">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/open.png">
+							</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/forum_showproblem.php?problem=1082" title="Goto Forum for 1082">
+								1082							</a>
+						</td>
+						<td class="newtwoLeft">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_showproblem.php?problem=1082">Array Queries</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1082">
+								<span class="percentcont">
+									<div class="perfill" style="width: 92.95%;"></div>
+									<div class="pertext">
+										1423 / 1531									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1082">
+							<span class="percentcont">
+									<div class="perfill" style="width: 41.48%;"></div>
+									<div class="pertext">
+										2986 / 7199									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newone">
+						<th class="newone" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1083">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/solved1.png">
+							</a>
+						</th>
+						<td class="newone" title="lock problem 1083">
+							<a href="http://www.lightoj.com/volume_lockproblem.php?problem=1083">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/open.png">
+							</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/forum_showproblem.php?problem=1083" title="Goto Forum for 1083">
+								1083							</a>
+						</td>
+						<td class="newoneLeft">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_showproblem.php?problem=1083">Histogram</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1083">
+								<span class="percentcont">
+									<div class="perfill" style="width: 93.2%;"></div>
+									<div class="pertext">
+										672 / 721									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1083">
+							<span class="percentcont">
+									<div class="perfill" style="width: 53.63%;"></div>
+									<div class="pertext">
+										1404 / 2618									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newtwo">
+						<th class="newtwo" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1085">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/submit1.png">
+							</a>
+						</th>
+						<td class="newtwo" title="normal judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/normal.png">
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/forum_showproblem.php?problem=1085" title="Goto Forum for 1085">
+								1085							</a>
+						</td>
+						<td class="newtwoLeft">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_showproblem.php?problem=1085">All Possible Increasing Subsequences</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1085">
+								<span class="percentcont">
+									<div class="perfill" style="width: 95.51%;"></div>
+									<div class="pertext">
+										575 / 602									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1085">
+							<span class="percentcont">
+									<div class="perfill" style="width: 38.45%;"></div>
+									<div class="pertext">
+										1064 / 2767									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newone">
+						<th class="newone" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1087">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/submit1.png">
+							</a>
+						</th>
+						<td class="newone" title="normal judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/normal.png">
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/forum_showproblem.php?problem=1087" title="Goto Forum for 1087">
+								1087							</a>
+						</td>
+						<td class="newoneLeft">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_showproblem.php?problem=1087">Diablo</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1087">
+								<span class="percentcont">
+									<div class="perfill" style="width: 87.69%;"></div>
+									<div class="pertext">
+										563 / 642									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1087">
+							<span class="percentcont">
+									<div class="perfill" style="width: 34.76%;"></div>
+									<div class="pertext">
+										1129 / 3248									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newtwo">
+						<th class="newtwo" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1089">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/submit1.png">
+							</a>
+						</th>
+						<td class="newtwo" title="normal judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/normal.png">
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/forum_showproblem.php?problem=1089" title="Goto Forum for 1089">
+								1089							</a>
+						</td>
+						<td class="newtwoLeft">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_showproblem.php?problem=1089">Points in Segments (II)</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1089">
+								<span class="percentcont">
+									<div class="perfill" style="width: 89.67%;"></div>
+									<div class="pertext">
+										460 / 513									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1089">
+							<span class="percentcont">
+									<div class="perfill" style="width: 32.49%;"></div>
+									<div class="pertext">
+										856 / 2635									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newone">
+						<th class="newone" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1093">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/submit1.png">
+							</a>
+						</th>
+						<td class="newone" title="normal judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/normal.png">
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/forum_showproblem.php?problem=1093" title="Goto Forum for 1093">
+								1093							</a>
+						</td>
+						<td class="newoneLeft">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_showproblem.php?problem=1093">Ghajini</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1093">
+								<span class="percentcont">
+									<div class="perfill" style="width: 95.48%;"></div>
+									<div class="pertext">
+										634 / 664									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1093">
+							<span class="percentcont">
+									<div class="perfill" style="width: 54.71%;"></div>
+									<div class="pertext">
+										1144 / 2091									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newtwo">
+						<th class="newtwo" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1097">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/submit1.png">
+							</a>
+						</th>
+						<td class="newtwo" title="normal judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/normal.png">
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/forum_showproblem.php?problem=1097" title="Goto Forum for 1097">
+								1097							</a>
+						</td>
+						<td class="newtwoLeft">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_showproblem.php?problem=1097">Lucky Number</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1097">
+								<span class="percentcont">
+									<div class="perfill" style="width: 93.04%;"></div>
+									<div class="pertext">
+										321 / 345									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1097">
+							<span class="percentcont">
+									<div class="perfill" style="width: 62.45%;"></div>
+									<div class="pertext">
+										572 / 916									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newone">
+						<th class="newone" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1103">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/submit1.png">
+							</a>
+						</th>
+						<td class="newone" title="normal judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/normal.png">
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/forum_showproblem.php?problem=1103" title="Goto Forum for 1103">
+								1103							</a>
+						</td>
+						<td class="newoneLeft">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_showproblem.php?problem=1103">Castle Walls</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1103">
+								<span class="percentcont">
+									<div class="perfill" style="width: 91.19%;"></div>
+									<div class="pertext">
+										145 / 159									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1103">
+							<span class="percentcont">
+									<div class="perfill" style="width: 47.79%;"></div>
+									<div class="pertext">
+										259 / 542									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newtwo">
+						<th class="newtwo" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1112">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/solved1.png">
+							</a>
+						</th>
+						<td class="newtwo" title="lock problem 1112">
+							<a href="http://www.lightoj.com/volume_lockproblem.php?problem=1112">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/open.png">
+							</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/forum_showproblem.php?problem=1112" title="Goto Forum for 1112">
+								1112							</a>
+						</td>
+						<td class="newtwoLeft">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_showproblem.php?problem=1112">Curious Robin Hood</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1112">
+								<span class="percentcont">
+									<div class="perfill" style="width: 95.11%;"></div>
+									<div class="pertext">
+										1166 / 1226									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1112">
+							<span class="percentcont">
+									<div class="perfill" style="width: 41.81%;"></div>
+									<div class="pertext">
+										2255 / 5394									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newone">
+						<th class="newone" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1120">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/submit1.png">
+							</a>
+						</th>
+						<td class="newone" title="normal judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/normal.png">
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/forum_showproblem.php?problem=1120" title="Goto Forum for 1120">
+								1120							</a>
+						</td>
+						<td class="newoneLeft">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_showproblem.php?problem=1120">Rectangle Union</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1120">
+								<span class="percentcont">
+									<div class="perfill" style="width: 90.96%;"></div>
+									<div class="pertext">
+										171 / 188									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1120">
+							<span class="percentcont">
+									<div class="perfill" style="width: 34.42%;"></div>
+									<div class="pertext">
+										370 / 1075									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newtwo">
+						<th class="newtwo" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1135">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/submit1.png">
+							</a>
+						</th>
+						<td class="newtwo" title="normal judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/normal.png">
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/forum_showproblem.php?problem=1135" title="Goto Forum for 1135">
+								1135							</a>
+						</td>
+						<td class="newtwoLeft">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_showproblem.php?problem=1135">Count the Multiples of 3</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1135">
+								<span class="percentcont">
+									<div class="perfill" style="width: 90.36%;"></div>
+									<div class="pertext">
+										431 / 477									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1135">
+							<span class="percentcont">
+									<div class="perfill" style="width: 41.54%;"></div>
+									<div class="pertext">
+										881 / 2121									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newone">
+						<th class="newone" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1164">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/submit1.png">
+							</a>
+						</th>
+						<td class="newone" title="normal judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/normal.png">
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/forum_showproblem.php?problem=1164" title="Goto Forum for 1164">
+								1164							</a>
+						</td>
+						<td class="newoneLeft">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_showproblem.php?problem=1164">Horrible Queries</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1164">
+								<span class="percentcont">
+									<div class="perfill" style="width: 93.52%;"></div>
+									<div class="pertext">
+										722 / 772									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1164">
+							<span class="percentcont">
+									<div class="perfill" style="width: 31.94%;"></div>
+									<div class="pertext">
+										1415 / 4430									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newtwo">
+						<th class="newtwo" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1183">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/submit1.png">
+							</a>
+						</th>
+						<td class="newtwo" title="normal judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/normal.png">
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/forum_showproblem.php?problem=1183" title="Goto Forum for 1183">
+								1183							</a>
+						</td>
+						<td class="newtwoLeft">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_showproblem.php?problem=1183">Computing Fast Average</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1183">
+								<span class="percentcont">
+									<div class="perfill" style="width: 95.14%;"></div>
+									<div class="pertext">
+										450 / 473									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1183">
+							<span class="percentcont">
+									<div class="perfill" style="width: 45.23%;"></div>
+									<div class="pertext">
+										796 / 1760									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newone">
+						<th class="newone" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1187">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/submit1.png">
+							</a>
+						</th>
+						<td class="newone" title="normal judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/normal.png">
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/forum_showproblem.php?problem=1187" title="Goto Forum for 1187">
+								1187							</a>
+						</td>
+						<td class="newoneLeft">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_showproblem.php?problem=1187">Lining up Students</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1187">
+								<span class="percentcont">
+									<div class="perfill" style="width: 90.63%;"></div>
+									<div class="pertext">
+										261 / 288									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1187">
+							<span class="percentcont">
+									<div class="perfill" style="width: 61.67%;"></div>
+									<div class="pertext">
+										560 / 908									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newtwo">
+						<th class="newtwo" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1188">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/submit1.png">
+							</a>
+						</th>
+						<td class="newtwo" title="normal judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/normal.png">
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/forum_showproblem.php?problem=1188" title="Goto Forum for 1188">
+								1188							</a>
+						</td>
+						<td class="newtwoLeft">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_showproblem.php?problem=1188">Fast Queries</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1188">
+								<span class="percentcont">
+									<div class="perfill" style="width: 90.38%;"></div>
+									<div class="pertext">
+										376 / 416									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1188">
+							<span class="percentcont">
+									<div class="perfill" style="width: 42.55%;"></div>
+									<div class="pertext">
+										817 / 1920									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newone">
+						<th class="newone" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1204">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/submit1.png">
+							</a>
+						</th>
+						<td class="newone" title="normal judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/normal.png">
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/forum_showproblem.php?problem=1204" title="Goto Forum for 1204">
+								1204							</a>
+						</td>
+						<td class="newoneLeft">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_showproblem.php?problem=1204">Weird Advertisement</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1204">
+								<span class="percentcont">
+									<div class="perfill" style="width: 86.3%;"></div>
+									<div class="pertext">
+										63 / 73									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1204">
+							<span class="percentcont">
+									<div class="perfill" style="width: 28.01%;"></div>
+									<div class="pertext">
+										149 / 532									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newtwo">
+						<th class="newtwo" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1207">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/submit1.png">
+							</a>
+						</th>
+						<td class="newtwo" title="normal judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/normal.png">
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/forum_showproblem.php?problem=1207" title="Goto Forum for 1207">
+								1207							</a>
+						</td>
+						<td class="newtwoLeft">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_showproblem.php?problem=1207">Posters for Election</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1207">
+								<span class="percentcont">
+									<div class="perfill" style="width: 93.58%;"></div>
+									<div class="pertext">
+										335 / 358									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1207">
+							<span class="percentcont">
+									<div class="perfill" style="width: 45.25%;"></div>
+									<div class="pertext">
+										586 / 1295									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newone">
+						<th class="newone" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1339">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/submit1.png">
+							</a>
+						</th>
+						<td class="newone" title="normal judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/normal.png">
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/forum_showproblem.php?problem=1339" title="Goto Forum for 1339">
+								1339							</a>
+						</td>
+						<td class="newoneLeft">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_showproblem.php?problem=1339">Strongest Community</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1339">
+								<span class="percentcont">
+									<div class="perfill" style="width: 95.76%;"></div>
+									<div class="pertext">
+										271 / 283									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1339">
+							<span class="percentcont">
+									<div class="perfill" style="width: 42.05%;"></div>
+									<div class="pertext">
+										484 / 1151									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newtwo">
+						<th class="newtwo" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1348">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/submit1.png">
+							</a>
+						</th>
+						<td class="newtwo" title="normal judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/normal.png">
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/forum_showproblem.php?problem=1348" title="Goto Forum for 1348">
+								1348							</a>
+						</td>
+						<td class="newtwoLeft">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_showproblem.php?problem=1348">Aladdin and the Return Journey</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1348">
+								<span class="percentcont">
+									<div class="perfill" style="width: 87.54%;"></div>
+									<div class="pertext">
+										302 / 345									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1348">
+							<span class="percentcont">
+									<div class="perfill" style="width: 27.6%;"></div>
+									<div class="pertext">
+										940 / 3406									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newone">
+						<th class="newone" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1411">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/submit1.png">
+							</a>
+						</th>
+						<td class="newone" title="normal judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/normal.png">
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/forum_showproblem.php?problem=1411" title="Goto Forum for 1411">
+								1411							</a>
+						</td>
+						<td class="newoneLeft">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_showproblem.php?problem=1411">Rip Van Winkle`s Code</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1411">
+								<span class="percentcont">
+									<div class="perfill" style="width: 82.09%;"></div>
+									<div class="pertext">
+										110 / 134									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1411">
+							<span class="percentcont">
+									<div class="perfill" style="width: 21.43%;"></div>
+									<div class="pertext">
+										251 / 1171									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newtwo">
+						<th class="newtwo" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1415">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/submit1.png">
+							</a>
+						</th>
+						<td class="newtwo" title="normal judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/normal.png">
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/forum_showproblem.php?problem=1415" title="Goto Forum for 1415">
+								1415							</a>
+						</td>
+						<td class="newtwoLeft">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_showproblem.php?problem=1415">Save the Trees</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1415">
+								<span class="percentcont">
+									<div class="perfill" style="width: 70.34%;"></div>
+									<div class="pertext">
+										83 / 118									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newtwo">
+							<a class="user_link_newtwo" href="http://www.lightoj.com/volume_problemstat.php?problem=1415">
+							<span class="percentcont">
+									<div class="perfill" style="width: 25.16%;"></div>
+									<div class="pertext">
+										155 / 616									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="newone">
+						<th class="newone" title="normal judge">
+							<a href="http://www.lightoj.com/volume_submit.php?problem=1424">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/submit1.png">
+							</a>
+						</th>
+						<td class="newone" title="normal judge">
+								<img src="./Jan&#39;s LightOJ __ Categorized Problems __ Data Structures __ Segment Tree_Interval Tree_files/normal.png">
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/forum_showproblem.php?problem=1424" title="Goto Forum for 1424">
+								1424							</a>
+						</td>
+						<td class="newoneLeft">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_showproblem.php?problem=1424">New Land</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1424">
+								<span class="percentcont">
+									<div class="perfill" style="width: 95.75%;"></div>
+									<div class="pertext">
+										203 / 212									</div>
+								</span>
+							</a>
+						</td>
+						<td class="newone">
+							<a class="user_link_newone" href="http://www.lightoj.com/volume_problemstat.php?problem=1424">
+							<span class="percentcont">
+									<div class="perfill" style="width: 53.24%;"></div>
+									<div class="pertext">
+										370 / 695									</div>
+								</span>
+							</a>
+						</td>
+					</tr>
+				</tbody></table>
+				<br>
+
+			</div>
+		</div>
+<div id="navigation">
+	<div class="navcontainer">
+		<ul class="navlist">
+			<li class="menutitle">Volume</li>
+
+			<li>
+				<a href="http://www.lightoj.com/volume_index.php">
+					Volume Home
+				</a>
+			</li>
+			<li>
+				<a href="http://www.lightoj.com/volume_problemset.php">
+					Problem Set
+				</a>
+			</li>
+
+
+
+			<li id="active">
+				<a id="current" href="http://www.lightoj.com/volume_problemcategory.php">
+					Problem Category
+				</a>
+			</li>
+			<li>
+				<a href="http://www.lightoj.com/volume_problemsetters.php">
+					Problem Setters
+				</a>
+			</li>
+			<li>
+				<a href="http://www.lightoj.com/volume_submit.php">
+					Submit Problem
+				</a>
+			</li>
+			<li>
+				<a href="http://www.lightoj.com/volume_usersubmissions.php">
+					My Submissions
+				</a>
+			</li>
+			<li>
+				<a href="http://www.lightoj.com/volume_submissions.php">
+					Judge Status
+				</a>
+			</li>
+			<li>
+				<a href="javascript:handleSubMenu()">
+					Ranklist
+				</a>
+			</li>
+
+			<span id="subactive" style="display: none;">
+				<li>
+					<a class="submenu" href="http://www.lightoj.com/volume_ranklist.php">
+						Full Ranklist
+					</a>
+				</li>
+
+				<li>
+					<a class="submenu" href="http://www.lightoj.com/volume_country_ranklist.php">
+						Country Ranklist
+					</a>
+				</li>
+				<!--
+				<li >
+					<a class="submenu" href="asd">
+						University Ranklist
+					</a>
+				</li>
+				!-->
+				<li>
+					<a class="submenu" href="http://www.lightoj.com/volume_ranklist.php?type=friend">
+						Friends Ranklist
+					</a>
+				</li>
+			</span>
+
+			<li>
+				<a href="http://www.lightoj.com/volume_userstat.php">
+					User Statistics
+				</a>
+			</li>
+			<li>
+				<a href="http://www.lightoj.com/volume_compare_userstat.php">
+					Compare User Statistics
+				</a>
+			</li>
+			<li class="menubottom">&nbsp;</li>
+		</ul>
+	</div>
+</div>
+
+<script>
+	function handleSubMenu( ) {
+		if( document.getElementById("subactive").style.display == "none" ) {
+			document.getElementById("subactive").style.display = "inline";
+		}
+		else {
+			document.getElementById("subactive").style.display = "none";
+		}
+	}
+</script>
+<div class="bottomDiv" align="center">
+	<table width="100%">
+		<tbody><tr>
+			<td width="50%">
+				<div class="midMessage">
+					Developed and Maintained by
+					<br><b>JANE ALAM JAN</b>
+				</div>
+
+			</td>
+			<td width="50%">
+				<div class="midMessage">
+					Copyright © 2012
+					<br><b>LightOJ, Jane Alam Jan</b>
+				</div>
+
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+	
+	
+
+</body></html>

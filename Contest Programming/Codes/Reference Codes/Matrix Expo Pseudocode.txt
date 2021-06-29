@@ -1,0 +1,9 @@
+MATHPOWER (M, n)
+if n == 1
+    then return M
+else
+    P = MATHPOWER (M, floor(n/2))
+    if n mod 2 == 0
+        then return P * P
+    else
+        return P * P * M
