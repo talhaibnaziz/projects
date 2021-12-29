@@ -1,4 +1,5 @@
 # projects
+Projects: The ReadMe files of the specific projects are in the specific folders. <br>
 The following Projects have been tested recently and should be working fine in the right conditions:
 1. Ataxx_Player
 2. Ataxx_Player_V2
